@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramo para Isamar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', 'Georgia', serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffeef8 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #6d4c5c;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background-color: #fffafc;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(229, 152, 202, 0.15);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ffebf3;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #e597c8 0%, #c97aa9 100%);
+            color: white;
+            padding: 35px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid #d48cbc;
+        }
+        
+        .header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+            letter-spacing: 1px;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .birthday-icon {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .ribbon {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 40px;
+            background: #ffb6e1;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #c97aa9;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            min-height: 500px;
+        }
+        
+        .message-section {
+            flex: 1;
+            min-width: 320px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #fff9fc;
+            border-right: 1px solid #ffebf3;
+            position: relative;
+        }
+        
+        .message-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 100%;
+            background: linear-gradient(to left, rgba(255, 249, 252, 1), rgba(255, 249, 252, 0));
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .message-box {
+            background-color: #fff;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 10px 25px rgba(229, 152, 202, 0.1);
+            border: 1px solid #ffebf3;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .message-box:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            background: linear-gradient(to bottom, #e597c8 0%, #ffb6e1 100%);
+        }
+        
+        .message-box:after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='%23ffebf3'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .message-box h2 {
+            color: #c97aa9;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+        }
+        
+        .message-box p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #6d4c5c;
+            margin-bottom: 18px;
+        }
+        
+        .signature {
+            text-align: right;
+            margin-top: 30px;
+            font-style: italic;
+            color: #c97aa9;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding-top: 20px;
+            border-top: 1px dashed #ffcce5;
+            position: relative;
+        }
+        
+        .signature:before {
+            content: '💝';
+            position: absolute;
+            left: 0;
+            top: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .bouquet-section {
+            flex: 1.2;
+            min-width: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            background: #fff9fc;
+            position: relative;
+        }
+        
+        .bouquet-container {
+            position: relative;
+            width: 380px;
+            height: 480px;
+        }
+        
+        /* Flores femeninas */
+        .flower {
+            position: absolute;
+            z-index: 2;
+            transition: transform 0.5s ease, filter 0.3s ease;
+        }
+        
+        .flower:hover {
+            transform: scale(1.08);
+            filter: brightness(1.1);
+            z-index: 10;
+        }
+        
+        /* Posiciones de flores */
+        .pink-rose {
+            bottom: 140px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85px;
+            height: 240px;
+            z-index: 5;
+        }
+        
+        .white-lily {
+            bottom: 130px;
+            left: 30%;
+            width: 75px;
+            height: 210px;
+            z-index: 4;
+        }
+        
+        .purple-tulip {
+            bottom: 130px;
+            right: 30%;
+            width: 75px;
+            height: 200px;
+            z-index: 4;
+        }
+        
+        .pink-daisy {
+            bottom: 190px;
+            left: 40%;
+            width: 65px;
+            height: 170px;
+            z-index: 3;
+        }
+        
+        .peach-orchid {
+            bottom: 190px;
+            right: 40%;
+            width: 75px;
+            height: 180px;
+            z-index: 3;
+        }
+        
+        .lavender-filler {
+            bottom: 160px;
+            left: 25%;
+            width: 45px;
+            height: 150px;
+            z-index: 2;
+        }
+        
+        .babybreath {
+            bottom: 160px;
+            right: 25%;
+            width: 45px;
+            height: 150px;
+            z-index: 2;
+        }
+        
+        .pink-filler {
+            bottom: 210px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 45px;
+            height: 130px;
+            z-index: 1;
+        }
+        
+        /* Pétalos de rosa */
+        .rose-petal {
+            position: absolute;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            transform-origin: bottom center;
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Centro de flor */
+        .flower-center {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Tallo */
+        .stem {
+            position: absolute;
+            background: linear-gradient(to right, #5a8f5a 0%, #7bb77b 100%);
+            z-index: 1;
+            border-radius: 3px;
+        }
+        
+        /* Hojas */
+        .leaf {
+            position: absolute;
+            background: linear-gradient(135deg, #5a8f5a 0%, #7bb77b 100%);
+            border-radius: 0 50% 50% 0;
+            z-index: 1;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Jarrón femenino */
+        .vase {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 170px;
+            height: 120px;
+            background: linear-gradient(45deg, #ffcce5 0%, #e597c8 100%);
+            border-radius: 15px 15px 40px 40px;
+            z-index: 3;
+            box-shadow: 
+                inset 0 -15px 25px rgba(0, 0, 0, 0.15),
+                0 10px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .vase:before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(45deg, #e597c8 0%, #ffcce5 100%);
+            border-radius: 50%;
+        }
+        
+        .vase-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.2) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+            background-size: 20px 20px;
+            border-radius: 15px 15px 40px 40px;
+        }
+        
+        /* Agua en el jarrón */
+        .water {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 45px;
+            background: rgba(173, 216, 230, 0.4);
+            border-radius: 0 0 40px 40px;
+            z-index: 2;
+            box-shadow: inset 0 5px 15px rgba(255, 255, 255, 0.5);
+        }
+        
+        .water:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: waterShine 3s infinite linear;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', 'Georgia', serif;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, #e597c8 0%, #c97aa9 100%);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: #fff;
+            color: #c97aa9;
+            border: 2px solid #ffb6e1;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(201, 122, 169, 0.25);
+        }
+        
+        .btn:active {
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(to right, #fff9fc 0%, #fff5f9 100%);
+            color: #c97aa9;
+            font-size: 0.95rem;
+            border-top: 1px solid #ffebf3;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .footer:before {
+            content: '🌸';
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+        }
+        
+        .footer:after {
+            content: '🌸';
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+        }
+        
+        .floating-petals {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .petal {
+            position: absolute;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            opacity: 0;
+            animation: floatDown 8s linear infinite;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .sparkle {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkleFloat 4s linear infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        @keyframes floatDown {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(500px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes gentleSway {
+            0%, 100% {
+                transform: translateX(-50%) rotate(0deg);
+            }
+            25% {
+                transform: translateX(-50%) rotate(1.5deg);
+            }
+            75% {
+                transform: translateX(-50%) rotate(-1.5deg);
+            }
+        }
+        
+        @keyframes individualSway {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            33% {
+                transform: rotate(1.2deg);
+            }
+            66% {
+                transform: rotate(-1.2deg);
+            }
+        }
+        
+        @keyframes waterShine {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        
+        @keyframes sparkleFloat {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(180deg);
+                opacity: 0;
+            }
+        }
+        
+        .animate-sway {
+            animation: gentleSway 4s ease-in-out infinite;
+        }
+        
+        .animate-individual {
+            animation: individualSway 3s ease-in-out infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .message-section {
+                border-right: none;
+                border-bottom: 1px solid #ffebf3;
+            }
+            
+            .message-section:before {
+                display: none;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .bouquet-container {
+                width: 320px;
+                height: 420px;
+            }
+            
+            .footer:before, .footer:after {
+                display: none;
+            }
+        }
+        
+        .highlight-name {
+            color: #c97aa9;
+            font-weight: bold;
+            font-size: 1.15em;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .envelope-icon {
+            position: absolute;
+            top: 20px;
+            left: 35px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 2rem;
+        }
+        
+        .glitter {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="ribbon">¡Feliz Cumpleaños!</div>
+        
+        <div class="header">
+            <i class="fas fa-envelope envelope-icon"></i>
+            <i class="fas fa-birthday-cake birthday-icon"></i>
+            <h1>Para Isamar</h1>
+            <p>Con cariño en tu día especial</p>
+        </div>
+        
+        <div class="content">
+            <div class="message-section">
+                <div class="message-box">
+                    <h2><i class="fas fa-heart" style="color:#e597c8;"></i> Para una Mujer Especial</h2>
+                    <p>Querida <span class="highlight-name">Isamar</span>,</p>
+                    <p>En este día tan especial, quiero desearte toda la felicidad del mundo. Eres una mujer increíble, llena de talento, elegancia y bondad.</p>
+                    <p>Que este nuevo año de vida te traiga sueños cumplidos, momentos inolvidables y toda la alegría que mereces. Tu corazón gentil y tu espíritu fuerte son una inspiración.</p>
+                    <p>Que cada día te recuerde lo valiosa que eres, no solo como profesional excepcional, sino como la persona maravillosa que ilumina la vida de quienes te rodean.</p>
+                    <p>¡Feliz cumpleaños, princesa!</p>
+                    
+                    <div class="signature">
+                        Con todo mi cariño,<br>
+                        <strong>Atilio</strong>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button class="btn btn-primary" id="animateBtn">
+                        <i class="fas fa-sparkles"></i> Mágia de Flores
+                    </button>
+                    <button class="btn btn-secondary" id="petalsBtn">
+                        <i class="fas fa-heart"></i> Lluvia de Pétalos
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bouquet-section">
+                <div class="bouquet-container" id="bouquet">
+                    <!-- Las flores se generarán con JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Este ramo de rosas y flores delicadas es para ti, Isamar. ¡Que tu día esté lleno de belleza y alegría!</p>
+        </div>
+        
+        <div class="floating-petals" id="petalsContainer"></div>
+        <div class="glitter" id="glitterContainer"></div>
+    </div>
+
+    <script>
+        // Crear las flores del ramo
+        const bouquet = document.getElementById('bouquet');
+        const petalsContainer = document.getElementById('petalsContainer');
+        const glitterContainer = document.getElementById('glitterContainer');
+        
+        // Colores femeninos para flores
+        const flowerColors = {
+            pinkRose: ['#ffb6e1', '#ff9ed8', '#ff85cf'],
+            whiteLily: ['#ffffff', '#fff5f9', '#ffebf3'],
+            purpleTulip: ['#d8a7ff', '#c97aff', '#ba4dff'],
+            pinkDaisy: ['#ffcce5', '#ffb3d9', '#ff99cc'],
+            peachOrchid: ['#ffccb3', '#ffb399', '#ff9980'],
+            lavender: ['#e6ccff', '#d9b3ff', '#cc99ff'],
+            babybreath: ['#ffffff', '#f9f9f9', '#f0f0f0']
+        };
+        
+        // Función para crear pétalos de rosa
+        function createRosePetal(size, color, angle, distance) {
+            const petal = document.createElement('div');
+            petal.className = 'rose-petal';
+            petal.style.width = `${size}px`;
+            petal.style.height = `${size * 1.2}px`;
+            petal.style.background = `linear-gradient(135deg, ${color} 0%, ${color}80 100%)`;
+            petal.style.top = `${50 - distance}px`;
+            petal.style.left = `${50 - size/2}px`;
+            petal.style.transform = `rotate(${angle}deg)`;
+            petal.style.boxShadow = `inset 0 0 8px rgba(255, 255, 255, 0.3), 0 2px 5px rgba(0,0,0,0.05)`;
+            return petal;
+        }
+        
+        // Función para crear una rosa femenina
+        function createPinkRose(className) {
+            const flower = document.createElement('div');
+            flower.className = `flower ${className}`;
+            
+            // Crear pétalos exteriores (más grandes)
+            for (let i = 0; i < 14; i++) {
+                const angle = i * 25.7;
+                const size = 22 + Math.random() * 6;
+                const distance = 18 + Math.random() * 6;
+                const color = flowerColors.pinkRose[Math.floor(Math.random() * flowerColors.pinkRose.length)];
+                const petal = createRosePetal(size, color, angle, distance);
+                flower.appendChild(petal);
+            }
+            
+            // Crear pétalos interiores (más pequeños)
+            for (let i = 0; i < 10; i++) {
+                const angle = i * 36;
+                const size = 14 + Math.random() * 4;
+                const distance = 10 + Math.random() * 4;
+                const color = flowerColors.pinkRose[Math.floor(Math.random() * flowerColors.pinkRose.length)];
+                const petal = createRosePetal(size, color, angle, distance);
+                flower.appendChild(petal);
+            }
+            
+            // Centro de la rosa
+            const center = document.createElement('div');
+            center.className = 'flower-center';
+            center.style.width = '18px';
+            center.style.height = '18px';
+            center.style.top = '46px';
+            center.style.left = '41px';
+            center.style.background = 'linear-gradient(135deg, #ffcc00 0%, #ff9900 100%)';
+            center.style.boxShadow = 'inset 0 0 8px rgba(0,0,0,0.15), 0 2px 5px rgba(0,0,0,0.1)';
+            flower.appendChild(center);
+            
+            // Tallo
+            const stem = document.createElement('div');
+            stem.className = 'stem';
+            stem.style.width = '7px';
+            stem.style.height = '200px';
+            stem.style.top = '75px';
+            stem.style.left = '46.5px';
+            flower.appendChild(stem);
+            
+            // Hojas
+            const leaf1 = document.createElement('div');
+            leaf1.className = 'leaf';
+            leaf1.style.width = '28px';
+            leaf1.style.height = '18px';
+            leaf1.style.top = '160px';
+            leaf1.style.left = '30px';
+            leaf1.style.transform = 'rotate(45deg)';
+            
+            const leaf2 = document.createElement('div');
+            leaf2.className = 'leaf';
+            leaf2.style.width = '32px';
+            leaf2.style.height = '20px';
+            leaf2.style.top = '190px';
+            leaf2.style.right = '30px';
+            leaf2.style.transform = 'rotate(-45deg)';
+            
+            flower.appendChild(leaf1);
+            flower.appendChild(leaf2);
+            
+            return flower;
+        }
+        
+        // Función para crear una flor femenina
+        function createFeminineFlower(className, type) {
+            const flower = document.createElement('div');
+            flower.className = `flower ${className}`;
+            
+            // Crear centro
+            const center = document.createElement('div');
+            center.className = 'flower-center';
+            
+            if (type === 'orchid') {
+                center.style.width = '20px';
+                center.style.height = '20px';
+                center.style.background = 'linear-gradient(135deg, #ffcc00 0%, #ff9900 100%)';
+                center.style.top = '40px';
+                center.style.left = '40px';
+            } else if (type === 'daisy') {
+                center.style.width = '15px';
+                center.style.height = '15px';
+                center.style.background = 'linear-gradient(135deg, #ffcc00 0%, #ff9900 100%)';
+                center.style.top = '42px';
+                center.style.left = '42px';
+            } else if (type === 'babybreath') {
+                center.style.width = '8px';
+                center.style.height = '8px';
+                center.style.backgroundColor = '#ffd700';
+                center.style.top = '46px';
+                center.style.left = '46px';
+            } else {
+                center.style.width = '18px';
+                center.style.height = '18px';
+                center.style.background = type === 'lily' ? 'linear-gradient(135deg, #ffd700 0%, #ff9900 100%)' : 'linear-gradient(135deg, #ffcc00 0%, #ff9900 100%)';
+                center.style.top = '41px';
+                center.style.left = '41px';
+            }
+            
+            flower.appendChild(center);
+            
+            // Crear pétalos
+            let petalCount, petalSize, petalHeight, colors;
+            
+            if (type === 'orchid') {
+                petalCount = 5;
+                petalSize = 30;
+                petalHeight = 40;
+                colors = flowerColors.peachOrchid;
+            } else if (type === 'daisy') {
+                petalCount = 12;
+                petalSize = 22;
+                petalHeight = 28;
+                colors = flowerColors.pinkDaisy;
+            } else if (type === 'babybreath') {
+                petalCount = 5;
+                petalSize = 12;
+                petalHeight = 12;
+                colors = flowerColors.babybreath;
+            } else if (type === 'lily') {
+                petalCount = 6;
+                petalSize = 25;
+                petalHeight = 35;
+                colors = flowerColors.whiteLily;
+            } else if (type === 'tulip') {
+                petalCount = 6;
+                petalSize = 22;
+                petalHeight = 30;
+                colors = flowerColors.purpleTulip;
+            } else {
+                petalCount = 6;
+                petalSize = 20;
+                petalHeight = 25;
+                colors = flowerColors.lavender;
+            }
+            
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'rose-petal';
+                petal.style.width = `${petalSize}px`;
+                petal.style.height = `${petalHeight}px`;
+                petal.style.background = `linear-gradient(135deg, ${colors[Math.floor(Math.random() * colors.length)]} 0%, ${colors[Math.floor(Math.random() * colors.length)]}80 100%)`;
+                petal.style.top = type === 'orchid' ? '30px' : '35px';
+                petal.style.left = type === 'orchid' ? '30px' : '35px';
+                
+                const angle = (i * 360) / petalCount;
+                const radius = type === 'orchid' ? 25 : type === 'daisy' ? 18 : 15;
+                const x = radius * Math.cos(angle * Math.PI / 180);
+                const y = radius * Math.sin(angle * Math.PI / 180);
+                
+                petal.style.transform = `translate(${x}px, ${y}px) rotate(${angle}deg)`;
+                flower.appendChild(petal);
+            }
+            
+            // Tallo
+            const stemHeight = className.includes('filler') || type === 'babybreath' ? 130 : 170;
+            const stem = document.createElement('div');
+            stem.className = 'stem';
+            stem.style.width = type === 'babybreath' ? '3px' : '5px';
+            stem.style.height = `${stemHeight}px`;
+            stem.style.top = type === 'orchid' ? '70px' : '65px';
+            stem.style.left = type === 'babybreath' ? '48.5px' : '47.5px';
+            flower.appendChild(stem);
+            
+            // Hojas para flores más grandes
+            if (!className.includes('filler') && type !== 'babybreath') {
+                const leaf = document.createElement('div');
+                leaf.className = 'leaf';
+                leaf.style.width = '22px';
+                leaf.style.height = '14px';
+                leaf.style.top = `${stemHeight - 30}px`;
+                leaf.style.left = '42px';
+                leaf.style.transform = 'rotate(60deg)';
+                flower.appendChild(leaf);
+            }
+            
+            return flower;
+        }
+        
+        // Crear las flores en posiciones femeninas
+        const flowers = [
+            { type: 'rose', className: 'pink-rose' },
+            { type: 'lily', className: 'white-lily' },
+            { type: 'tulip', className: 'purple-tulip' },
+            { type: 'daisy', className: 'pink-daisy' },
+            { type: 'orchid', className: 'peach-orchid' },
+            { type: 'lavender', className: 'lavender-filler' },
+            { type: 'babybreath', className: 'babybreath' },
+            { type: 'lavender', className: 'pink-filler' }
+        ];
+        
+        flowers.forEach(flower => {
+            let flowerElement;
+            if (flower.type === 'rose') {
+                flowerElement = createPinkRose(flower.className);
+            } else {
+                flowerElement = createFeminineFlower(flower.className, flower.type);
+            }
+            bouquet.appendChild(flowerElement);
+        });
+        
+        // Crear el jarrón
+        const vase = document.createElement('div');
+        vase.className = 'vase';
+        
+        const vasePattern = document.createElement('div');
+        vasePattern.className = 'vase-pattern';
+        vase.appendChild(vasePattern);
+        
+        const water = document.createElement('div');
+        water.className = 'water';
+        vase.appendChild(water);
+        
+        bouquet.appendChild(vase);
+        
+        // Botón para animar las flores
+        document.getElementById('animateBtn').addEventListener('click', function() {
+            const mainFlowers = document.querySelectorAll('.pink-rose, .white-lily, .purple-tulip, .pink-daisy, .peach-orchid');
+            const fillerFlowers = document.querySelectorAll('.lavender-filler, .babybreath, .pink-filler');
+            
+            // Animación diferente para flores principales y de relleno
+            mainFlowers.forEach(flower => {
+                if (flower.classList.contains('animate-sway')) {
+                    flower.classList.remove('animate-sway');
+                } else {
+                    flower.classList.add('animate-sway');
+                }
+            });
+            
+            fillerFlowers.forEach(flower => {
+                if (flower.classList.contains('animate-individual')) {
+                    flower.classList.remove('animate-individual');
+                } else {
+                    flower.classList.add('animate-individual');
+                }
+            });
+            
+            // Crear brillo
+            if (!this.classList.contains('active')) {
+                createSparkle();
+                this.classList.add('active');
+            }
+            
+            // Cambiar texto del botón
+            if (this.innerHTML.includes('Mágia')) {
+                this.innerHTML = '<i class="fas fa-sparkles"></i> Detener Mágia';
+            } else {
+                this.innerHTML = '<i class="fas fa-sparkles"></i> Mágia de Flores';
+                this.classList.remove('active');
+            }
+        });
+        
+        // Función para crear brillo
+        function createSparkle() {
+            for (let i = 0; i < 15; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                
+                const size = 3 + Math.random() * 4;
+                sparkle.style.width = `${size}px`;
+                sparkle.style.height = `${size}px`;
+                
+                const left = Math.random() * 100;
+                const delay = Math.random() * 3;
+                const duration = 2 + Math.random() * 2;
+                
+                sparkle.style.left = `${left}%`;
+                sparkle.style.top = `${80 + Math.random() * 15}%`;
+                sparkle.style.animationDelay = `${delay}s`;
+                sparkle.style.animationDuration = `${duration}s`;
+                
+                glitterContainer.appendChild(sparkle);
+                
+                // Remover después de la animación
+                setTimeout(() => {
+                    sparkle.remove();
+                }, duration * 1000 + delay * 1000);
+            }
+        }
+        
+        // Botón para mostrar pétalos flotantes
+        document.getElementById('petalsBtn').addEventListener('click', function() {
+            // Limpiar pétalos existentes
+            petalsContainer.innerHTML = '';
+            
+            // Crear nuevos pétalos
+            for (let i = 0; i < 25; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                
+                // Tamaño aleatorio
+                const size = 12 + Math.random() * 18;
+                petal.style.width = `${size}px`;
+                petal.style.height = `${size * 1.2}px`;
+                
+                // Color aleatorio de tonos rosas/púrpuras
+                const colors = [
+                    'linear-gradient(135deg, #ffb6e1 0%, #ff9ed8 100%)',
+                    'linear-gradient(135deg, #ffcce5 0%, #ffb3d9 100%)',
+                    'linear-gradient(135deg, #e6ccff 0%, #d9b3ff 100%)',
+                    'linear-gradient(135deg, #ffccb3 0%, #ffb399 100%)',
+                    'linear-gradient(135deg, #ffffff 0%, #fff5f9 100%)'
+                ];
+                petal.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Posición aleatoria
+                const left = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = 7 + Math.random() * 5;
+                
+                petal.style.left = `${left}%`;
+                petal.style.animationDelay = `${delay}s`;
+                petal.style.animationDuration = `${duration}s`;
+                
+                petalsContainer.appendChild(petal);
+            }
+            
+            // Cambiar texto del botón temporalmente
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-heart"></i> Pétalos en el aire';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                this.innerHTML = originalText;
+                this.disabled = false;
+            }, 3000);
+        });
+        
+        // Iniciar con algunas animaciones sutiles
+        window.addEventListener('load', function() {
+            // Activar animación suave de algunas flores
+            setTimeout(() => {
+                document.querySelector('.pink-rose').classList.add('animate-sway');
+                document.querySelector('.white-lily').classList.add('animate-individual');
+                document.querySelector('.purple-tulip').classList.add('animate-individual');
+            }, 1000);
+            
+            // Crear algunos pétalos flotantes
+            setTimeout(() => {
+                document.getElementById('petalsBtn').click();
+            }, 1500);
+            
+            // Agregar brillo inicial
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    createSparkle();
+                }, i * 300);
+            }
+        });
+    </script>
+</body>
+</html>
