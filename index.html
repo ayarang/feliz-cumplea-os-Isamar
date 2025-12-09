@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramo para Isamar</title>
+    <title>Ramo para Isamar - Feliz Cumpleaños</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -238,6 +238,7 @@
             width: 85px;
             height: 240px;
             z-index: 5;
+            animation: gentleSway 4s ease-in-out infinite;
         }
         
         .white-lily {
@@ -246,6 +247,7 @@
             width: 75px;
             height: 210px;
             z-index: 4;
+            animation: individualSway 3.5s ease-in-out infinite;
         }
         
         .purple-tulip {
@@ -254,6 +256,7 @@
             width: 75px;
             height: 200px;
             z-index: 4;
+            animation: individualSway 3.8s ease-in-out infinite;
         }
         
         .pink-daisy {
@@ -262,6 +265,7 @@
             width: 65px;
             height: 170px;
             z-index: 3;
+            animation: individualSway 3.2s ease-in-out infinite;
         }
         
         .peach-orchid {
@@ -270,6 +274,7 @@
             width: 75px;
             height: 180px;
             z-index: 3;
+            animation: individualSway 3.7s ease-in-out infinite;
         }
         
         .lavender-filler {
@@ -278,6 +283,7 @@
             width: 45px;
             height: 150px;
             z-index: 2;
+            animation: individualSway 3.3s ease-in-out infinite;
         }
         
         .babybreath {
@@ -286,6 +292,7 @@
             width: 45px;
             height: 150px;
             z-index: 2;
+            animation: individualSway 3.6s ease-in-out infinite;
         }
         
         .pink-filler {
@@ -295,6 +302,7 @@
             width: 45px;
             height: 130px;
             z-index: 1;
+            animation: individualSway 3.4s ease-in-out infinite;
         }
         
         /* Pétalos de rosa */
@@ -652,17 +660,17 @@
                     <p>¡Feliz cumpleaños, princesa!</p>
                     
                     <div class="signature">
-                        Con todo mi cariño,<br>
+                        Tu amigo,<br>
                         <strong>Atilio</strong>
                     </div>
                 </div>
                 
                 <div class="controls">
-                    <button class="btn btn-primary" id="animateBtn">
-                        <i class="fas fa-sparkles"></i> Mágia de Flores
+                    <button class="btn btn-primary" id="sparkleBtn">
+                        <i class="fas fa-sparkles"></i> Más Brillo
                     </button>
-                    <button class="btn btn-secondary" id="petalsBtn">
-                        <i class="fas fa-heart"></i> Lluvia de Pétalos
+                    <button class="btn btn-secondary" id="morePetalsBtn">
+                        <i class="fas fa-heart"></i> Más Pétalos
                     </button>
                 </div>
             </div>
@@ -932,78 +940,9 @@
         
         bouquet.appendChild(vase);
         
-        // Botón para animar las flores
-        document.getElementById('animateBtn').addEventListener('click', function() {
-            const mainFlowers = document.querySelectorAll('.pink-rose, .white-lily, .purple-tulip, .pink-daisy, .peach-orchid');
-            const fillerFlowers = document.querySelectorAll('.lavender-filler, .babybreath, .pink-filler');
-            
-            // Animación diferente para flores principales y de relleno
-            mainFlowers.forEach(flower => {
-                if (flower.classList.contains('animate-sway')) {
-                    flower.classList.remove('animate-sway');
-                } else {
-                    flower.classList.add('animate-sway');
-                }
-            });
-            
-            fillerFlowers.forEach(flower => {
-                if (flower.classList.contains('animate-individual')) {
-                    flower.classList.remove('animate-individual');
-                } else {
-                    flower.classList.add('animate-individual');
-                }
-            });
-            
-            // Crear brillo
-            if (!this.classList.contains('active')) {
-                createSparkle();
-                this.classList.add('active');
-            }
-            
-            // Cambiar texto del botón
-            if (this.innerHTML.includes('Mágia')) {
-                this.innerHTML = '<i class="fas fa-sparkles"></i> Detener Mágia';
-            } else {
-                this.innerHTML = '<i class="fas fa-sparkles"></i> Mágia de Flores';
-                this.classList.remove('active');
-            }
-        });
-        
-        // Función para crear brillo
-        function createSparkle() {
-            for (let i = 0; i < 15; i++) {
-                const sparkle = document.createElement('div');
-                sparkle.className = 'sparkle';
-                
-                const size = 3 + Math.random() * 4;
-                sparkle.style.width = `${size}px`;
-                sparkle.style.height = `${size}px`;
-                
-                const left = Math.random() * 100;
-                const delay = Math.random() * 3;
-                const duration = 2 + Math.random() * 2;
-                
-                sparkle.style.left = `${left}%`;
-                sparkle.style.top = `${80 + Math.random() * 15}%`;
-                sparkle.style.animationDelay = `${delay}s`;
-                sparkle.style.animationDuration = `${duration}s`;
-                
-                glitterContainer.appendChild(sparkle);
-                
-                // Remover después de la animación
-                setTimeout(() => {
-                    sparkle.remove();
-                }, duration * 1000 + delay * 1000);
-            }
-        }
-        
-        // Botón para mostrar pétalos flotantes
-        document.getElementById('petalsBtn').addEventListener('click', function() {
-            // Limpiar pétalos existentes
-            petalsContainer.innerHTML = '';
-            
-            // Crear nuevos pétalos
-            for (let i = 0; i < 25; i++) {
+        // Función para crear pétalos flotantes automáticamente
+        function createFallingPetals(count = 15) {
+            for (let i = 0; i < count; i++) {
                 const petal = document.createElement('div');
                 petal.className = 'petal';
                 
@@ -1032,39 +971,103 @@
                 petal.style.animationDuration = `${duration}s`;
                 
                 petalsContainer.appendChild(petal);
+                
+                // Remover después de la animación
+                setTimeout(() => {
+                    if (petal.parentNode === petalsContainer) {
+                        petal.remove();
+                    }
+                }, (duration + delay) * 1000);
             }
+        }
+        
+        // Función para crear brillo
+        function createSparkle(count = 8) {
+            for (let i = 0; i < count; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                
+                const size = 3 + Math.random() * 4;
+                sparkle.style.width = `${size}px`;
+                sparkle.style.height = `${size}px`;
+                
+                const left = Math.random() * 100;
+                const delay = Math.random() * 3;
+                const duration = 2 + Math.random() * 2;
+                
+                sparkle.style.left = `${left}%`;
+                sparkle.style.top = `${80 + Math.random() * 15}%`;
+                sparkle.style.animationDelay = `${delay}s`;
+                sparkle.style.animationDuration = `${duration}s`;
+                
+                glitterContainer.appendChild(sparkle);
+                
+                // Remover después de la animación
+                setTimeout(() => {
+                    if (sparkle.parentNode === glitterContainer) {
+                        sparkle.remove();
+                    }
+                }, duration * 1000 + delay * 1000);
+            }
+        }
+        
+        // Botón para mostrar más brillo
+        document.getElementById('sparkleBtn').addEventListener('click', function() {
+            createSparkle(12);
             
             // Cambiar texto del botón temporalmente
             const originalText = this.innerHTML;
-            this.innerHTML = '<i class="fas fa-heart"></i> Pétalos en el aire';
+            this.innerHTML = '<i class="fas fa-sparkles"></i> ¡Brillando!';
             this.disabled = true;
             
             setTimeout(() => {
                 this.innerHTML = originalText;
                 this.disabled = false;
-            }, 3000);
+            }, 2000);
         });
         
-        // Iniciar con algunas animaciones sutiles
+        // Botón para mostrar más pétalos
+        document.getElementById('morePetalsBtn').addEventListener('click', function() {
+            createFallingPetals(20);
+            
+            // Cambiar texto del botón temporalmente
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-heart"></i> ¡Más pétalos!';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                this.innerHTML = originalText;
+                this.disabled = false;
+            }, 2000);
+        });
+        
+        // Iniciar con animaciones automáticas
         window.addEventListener('load', function() {
-            // Activar animación suave de algunas flores
+            // Las flores ya tienen animaciones automáticas en CSS
+            
+            // Crear pétalos flotantes automáticamente cada 3 segundos
+            setInterval(() => {
+                createFallingPetals(5);
+            }, 3000);
+            
+            // Crear brillo automáticamente cada 4 segundos
+            setInterval(() => {
+                createSparkle(3);
+            }, 4000);
+            
+            // Crear pétalos iniciales
             setTimeout(() => {
-                document.querySelector('.pink-rose').classList.add('animate-sway');
-                document.querySelector('.white-lily').classList.add('animate-individual');
-                document.querySelector('.purple-tulip').classList.add('animate-individual');
+                createFallingPetals(20);
+            }, 500);
+            
+            // Crear brillo inicial
+            setTimeout(() => {
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        createSparkle();
+                    }, i * 300);
+                }
             }, 1000);
-            
-            // Crear algunos pétalos flotantes
-            setTimeout(() => {
-                document.getElementById('petalsBtn').click();
-            }, 1500);
-            
-            // Agregar brillo inicial
-            for (let i = 0; i < 5; i++) {
-                setTimeout(() => {
-                    createSparkle();
-                }, i * 300);
-            }
         });
     </script>
 </body>
